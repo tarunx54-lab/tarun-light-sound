@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tarun Light & Sound</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap');
+
+        /* Color Variables */
+        :root {
+            --gold: #c9a66b;
+            --dark-bg: #1a1a1a;
+            --dark-bg-light: #333333;
+            --text-light: #e9d7a7;
+            --text-lighter: #f0e7c1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--dark-bg-light);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        header h1 {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 2.5rem;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.2rem;
+        }
+
+        header p {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.7rem;
+            color: var(--text-lighter);
+            letter-spacing: 0.05em;
+        }
+
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Banner Section */
+        .banner {
+            background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1350&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--gold);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .banner button {
+            margin-top: 1rem;
+            padding: 0.7rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-bg);
+            background-color: var(--gold);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 0 12px var(--gold);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .banner button:hover {
+            background-color: #a38043;
+            transform: scale(1.05);
+        }
+
+        /* Packages Section */
+        section.packages {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        section.packages h2 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+        }
+
+        table {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto 1rem auto;
+            border-collapse: collapse;
+            font-weight: 500;
+            color: var(--text-lighter);
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--dark-bg-light);
+        }
+
+        th {
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        td {
+            text-align: right;
+        }
+
+        td:first-child {
+            text-align: left;
+        }
+
+        /* Highlight last row */
+        table tr:last-child td {
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Description under packages */
+        .package-desc {
+            font-style: italic;
+            margin-top: 1rem;
+            color: var(--text-lighter);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Discounts Highlight */
+        .discount {
+            margin-top: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        /* Why Choose Section */
+        section.why-choose {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        section.why-choose p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.08em;
+        }
+
+        section.why-choose p span {
+            border-right: 2px solid var(--gold);
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+
+        section.why-choose p:last-child span {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* About Section */
+        section.about {
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+            text-align: center;
+            color: var(--text-lighter);
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        section.contact {
+            background-color: var(--dark-bg-light);
+            color: var(--text-lighter);
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        section.contact h2 {
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--gold);
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input,
+        textarea {
+            padding: 0.7rem 1rem;
+            border-radius: 5px;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            padding: 0.75rem 0;
+            box-shadow: 0 0 12px var(--gold);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #a38043;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg-light);
+            padding: 1rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-lighter);
+            border-top: 2px solid var(--gold);
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner {
+                font-size: 2rem;
+                height: 220px;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1.3rem;
+            }
+
+            section.contact {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>TARUN LIGHT & SOUND</h1>
+        <p>Live Sound Experience ✨</p>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div>
+                Crafted for those who value<br />clarity • balance • elegance<br />
+                <button onclick="window.location.href='#contact'">Get a Quote</button>
+            </div>
+        </section>
+
+        <section class="packages" aria-labelledby="packages-heading">
+            <h2 id="packages-heading">Signature Sound Packages</h2>
+            <table role="table" aria-describedby="package-description">
+                <thead>
+                    <tr>
+                        <th scope="col">Package</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2 Top + 2 Monitor</td>
+                        <td>₹ 4000/-</td>
+                    </tr>
+                    <tr>
+                        <td>4 Top + 2 Monitor</td>
+                        <td>₹ 5000/-</td>
+                    </tr>
+                    <tr>
+                        <td>4 Top + 2 Monitor + 1 Bass</td>
+                        <td>₹ 5500/-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="package-description" class="package-desc">Perfect for weddings, private celebrations and refined cultural gatherings.</p>
+            <p class="discount">✨ Exclusive discounts on multi-day bookings</p>
+        </section>
+
+        <section class="why-choose" aria-label="Why choose Tarun Light & Sound?">
+            <p><span>Timeless Sound</span>|<span>Premium Quality</span>|<span>Elite Service</span></p>
+        </section>
+
+        <section class="about" aria-labelledby="about-heading">
+            <h2 id="about-heading" style="color: var(--gold); text-align:center; margin-bottom: 15px; font-weight:700;">
+                About Us
+            </h2>
+            <p>
+                At Tarun Light & Sound, we deliver an exceptional live sound experience tailored for your special occasions.
+                We pride ourselves on clarity, balance, and elegance to make your events memorable.
+            </p>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Us</h2>
+            <div class="contact-info">
+                <p>
+                    <i aria-hidden="true">📞</i>
+                    <a href="tel:+918847544977" style="color: var(--text-lighter); text-decoration:none;">8847544977</a>
+                </p>
+            </div>
+            <form action="#" method="POST" aria-label="Contact form">
+                <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+                <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+                <textarea name="message" placeholder="Your Message" required aria-required="true"></textarea>
+                <input type="submit" value="Send Message" />
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Tarun Light & Sound | 
+        <a href="#" tabindex="0">Privacy Policy</a> | 
+        <a href="#" tabindex="0">Terms & Conditions</a>
+    </footer>
+</body>
+
+</html>
